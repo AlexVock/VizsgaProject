@@ -1,0 +1,78 @@
+/* Általános beállítások */
+:root {
+  --elsodleges: #4a90e2;
+  --masodlagos: #f5f7fa;
+  --sotet: #2c3e50;
+  --vilagos: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--masodlagos);
+}
+
+/* Landing Page Hero */
+.landing-page {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.display-4 {
+  color: var(--sotet);
+  margin-top: 50px;
+}
+
+/* Auth (Login/Reg) kártyák középre igazítása */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  border: none;
+  border-radius: 15px;
+}
+
+/* Modern kártyák a Vezérlőpulton */
+.card {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Navigáció */
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+}
+
+/* Gombok kerekítése */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 10px 20px;
+}
+
+/* Bevásárlólista design */
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 15px;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
