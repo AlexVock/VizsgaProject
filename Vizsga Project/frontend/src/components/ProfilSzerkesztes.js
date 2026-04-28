@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const ProfilSzerkesztes = ({ felhasznalo }) => {
+const ProfilSzerkesztes = ({ felhasznalo, setFelhasznalo }) => {
     const [nev, setNev] = useState(felhasznalo.nev);
     const [szin, setSzin] = useState(felhasznalo.profil_szin || '#4a90e2');
 
     const mentes = async () => {
-        const adat = { id: felhasznalo.id, nev: nev, szin: szin };
-        const valasz = await axios.post('http://localhost/Vizsga%20Project/backend/api.php?muvelet=profil_frissites', adat);
-        if(valasz.data.siker) {
-            alert("Profil frissítve! Jelentkezz be újra a változáshoz.");
-        }
+        try {
+            const adat = { id: felhasznalo.id, nev: nev, szin: szin };
+            const apiBase = encodeURI('http://localhost/Vizsga Project/backend/api.php');
+            const valasz = await axios.post(`${apiBase}?muvelet=profil_frissites`, adat);
+            if(valasz.data.siker) {
+                // update localStorage and parent state
+                const uj = { ...felhasznalo, nev: valasz.data.felhasznalo.nev, profil_szin: valasz.data.felhasznalo.profil_szin };
+                localStorage.setItem('felhasznalo', JSON.stringify(uj));
+                if (setFelhasznalo) setFelhasznalo(uj);
+                alert("Profil frissítve!");
+            } else {
+                alert('Hiba: ' + (valasz.data.uzenet || 'Nem sikerült frissíteni'));
+            }
+        } catch (err) { console.error('Profil mentési hiba', err); alert('Hálózati hiba'); }
     };
 
     return (

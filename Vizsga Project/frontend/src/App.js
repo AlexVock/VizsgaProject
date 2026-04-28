@@ -6,6 +6,7 @@ import Vezerlopult from './components/Vezerlopult';
 import SzobaValaszto from './components/SzobaValaszto';
 import KezdoOldal from './components/KezdoOldal';
 import Navbar from './components/Navbar';
+import ProfilSzerkesztes from './components/ProfilSzerkesztes';
 import axios from 'axios';
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
                         <SzobaValaszto felhasznalo={felhasznalo} onCsoportBeallitas={handleCsoportBeallitas} />
                     ) : <Navigate to="/" />
                 } />
+                <Route path="/profil" element={felhasznalo ? <ProfilSzerkesztes felhasznalo={felhasznalo} setFelhasznalo={setFelhasznalo} /> : <Navigate to="/" />} />
                 
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>

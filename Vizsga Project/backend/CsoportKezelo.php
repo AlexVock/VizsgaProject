@@ -59,6 +59,21 @@ class CsoportKezelo {
             return ["siker" => false, "uzenet" => "Hiba: " . $e->getMessage()];
         }
     }
+    public function elhagyas($adatok) {
+        try {
+            // Felhasználó csoport_id törlése
+            $update = "UPDATE felhasznalok SET csoport_id = NULL WHERE id = ?";
+            $this->kapcsolat->prepare($update)->execute([$adatok->felhasznalo_id]);
+
+            // Eltávolítjuk a csoport_tagok bejegyzést, ha van
+            $delete = "DELETE FROM csoport_tagok WHERE felhasznalo_id = ?";
+            $this->kapcsolat->prepare($delete)->execute([$adatok->felhasznalo_id]);
+
+            return ["siker" => true];
+        } catch (PDOException $e) {
+            return ["siker" => false, "uzenet" => "Hiba: " . $e->getMessage()];
+        }
+    }
 
     public function adatokLekeres($cs_id) {
         if (!$cs_id) return ["nev" => "Nincs csoport", "kod" => "-"];

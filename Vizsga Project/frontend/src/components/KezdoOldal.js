@@ -7,7 +7,7 @@ const KezdoOldal = () => {
             {/* Felső Navigáció */}
             <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm sticky-top">
                 <div className="container">
-                    <Link className="navbar-brand fw-bold text-primary fs-3" to="/">🏠 RoomMate</Link>
+                        <Link className="navbar-brand fw-bold text-primary fs-3" to="/">RoomMate</Link>
                     <div className="ms-auto">
                         <Link to="/login" className="btn btn-outline-primary fw-bold px-4 rounded-pill">Bejelentkezés</Link>
                     </div>
@@ -41,21 +41,21 @@ const KezdoOldal = () => {
                     <div className="row gx-5">
                         <div className="col-lg-4 mb-5 mb-lg-0 text-center">
                             <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3 p-4 d-inline-block shadow">
-                                <i className="bi bi-chat-dots fs-1">💬</i>
+                                    <i className="bi bi-chat-dots fs-1"></i>
                             </div>
                             <h2 className="h4 fw-bolder">Instant Chat</h2>
                             <p className="text-muted">Beszéljétek meg a fontos dolgokat zárt, biztonságos csoportban.</p>
                         </div>
                         <div className="col-lg-4 mb-5 mb-lg-0 text-center">
                             <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3 p-4 d-inline-block shadow">
-                                <i className="bi bi-cash-stack fs-1">💰</i>
+                                    <i className="bi bi-cash-stack fs-1"></i>
                             </div>
                             <h2 className="h4 fw-bolder">Pénzügyek</h2>
                             <p className="text-muted">Vezessétek a közös kiadásokat és lássátok, ki mennyivel tartozik.</p>
                         </div>
                         <div className="col-lg-4 text-center">
                             <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3 p-4 d-inline-block shadow">
-                                <i className="bi bi-list-check fs-1">📋</i>
+                                    <i className="bi bi-list-check fs-1"></i>
                             </div>
                             <h2 className="h4 fw-bolder">Teendők</h2>
                             <p className="text-muted">Takarítási rend és bevásárlólisták, amiket bárki kipipálhat.</p>

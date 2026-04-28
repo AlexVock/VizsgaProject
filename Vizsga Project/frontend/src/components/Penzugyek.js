@@ -78,7 +78,7 @@ const Penzugyek = ({ csoportId, felhasznaloId }) => {
             <div className="col-lg-7">
                 <div className="card shadow-sm border-0 mb-4" style={{ backgroundColor: '#f8f9fa' }}>
                     <div className="card-body">
-                        <h4 className="fw-bold mb-3">{szerkesztettId ? '✏️ Kiadás szerkesztése' : '💰 Új kiadás rögzítése'}</h4>
+                        <h4 className="fw-bold mb-3">{szerkesztettId ? 'Kiadás szerkesztése' : 'Új kiadás rögzítése'}</h4>
                         <form onSubmit={mentes} className="row g-2">
                             <div className="col-md-5">
                                 <label className="form-label small fw-bold">Megnevezés</label>
